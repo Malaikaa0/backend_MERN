@@ -15,7 +15,8 @@ const notificationRoutes = require("./routes/notificationRoutes");
 const app = express();
 
 app.use(helmet());
-app.use(cors({ origin: "http://localhost:5173", credentials: true }));
+const allowedOrigins = ["http://localhost:5173", process.env.CLIENT_URL].filter(Boolean);
+app.use(cors({ origin: allowedOrigins, credentials: true }));
 app.use(morgan("dev"));
 app.use(express.json());
 app.use(cookieParser());
