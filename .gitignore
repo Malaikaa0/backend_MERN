@@ -1,0 +1,8 @@
+node_modules/
+.env
+*.log
+npm-debug.log*
+
+# uploaded files are runtime data, not source
+uploads/*
+!uploads/.gitkeep
